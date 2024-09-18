@@ -1,0 +1,172 @@
+
+
+@import 'variaveis.less';
+@import 'mapas.less';
+
+@breakpointMobille: ~"(max-width: 767px)";
+@breakpointTablet: ~"(min-width: 768px) and (max-width: 1023px)";
+
+// fazendo um mixing
+.fontMyText {
+    font-size: 1.3rem;
+    color: #colors[backgroundColor];
+    font-weight: bold;
+}
+
+
+.alinharGeral{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: @font;
+}
+
+body{
+    background-color: #colors[backgroundColor];
+    color: @textColor;
+}
+
+.interface{
+    max-width: 960px;
+    width: 100%;
+    margin: 0 auto;
+
+    @media @breakpointTablet{
+        max-width: 80%;
+    }
+    
+    @media @breakpointMobille{
+        max-width: 70%;
+    }
+}
+
+
+.navegation{
+    background-color: @textColor;
+    display: flex;
+    justify-content: center;
+    border-bottom: solid 3px rgb(255, 255, 255);
+
+
+    ul{
+    display: flex;
+    gap: 4rem;
+    padding: 30px;
+    margin: 0 auto;
+
+    li{
+        list-style: none;
+        // usando o mixing
+        .fontMyText()
+    }
+    }
+}
+
+
+
+
+
+header{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+
+    @media @breakpointTablet{
+        display: flex;
+        flex-direction: column;
+        height: max-content;
+       }
+   
+       @media @breakpointMobille{
+           display: flex;
+           flex-direction: column;
+           height: max-content;
+          }
+
+    
+.container-sobre{
+    margin-top: 4rem;
+    display: flex;
+
+    @media @breakpointTablet{
+     display: flex;
+     flex-direction: column;
+    }
+
+    @media @breakpointMobille{
+        display: flex;
+        flex-direction: column;
+       }
+
+    img{
+        height: 500px;
+        transition: all .4s ease;
+
+        &:hover{
+            border-radius: 30px;
+        }
+
+    }
+
+    .conteudo{
+        padding-left: 1rem;
+        padding-right: 1rem;
+
+        h1{
+            font-size: 3rem;
+            font-weight: bold;
+            border-bottom: solid 3px @textColor;
+        }
+
+        h2{
+            margin-top: 2rem;
+            font-size: 2rem;
+        }
+
+        p{
+            margin-top: 1rem;
+            font-size: 1.1rem;
+        }
+    }
+}
+}
+
+nav{
+    background-color: @textColor;
+    border-radius: 30px;
+    .alinharGeral();
+
+    ul{
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        height: max-content;
+        gap: 4rem;
+
+        li{
+            list-style: none;
+
+            a{
+                display: flex;
+                flex-direction: column;
+                text-decoration: none;
+                align-items: center;
+                transition: all .4s ease;
+
+                &:hover{
+                    transform: translateY(-5px);
+                }
+            }
+        }
+    }
+}
