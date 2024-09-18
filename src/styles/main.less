@@ -1,172 +1,120 @@
-
-
-@import 'variaveis.less';
-@import 'mapas.less';
+@import "./variaveis.less"; 
 
 @breakpointMobille: ~"(max-width: 767px)";
 @breakpointTablet: ~"(min-width: 768px) and (max-width: 1023px)";
 
-// fazendo um mixing
-.fontMyText {
-    font-size: 1.3rem;
-    color: #colors[backgroundColor];
-    font-weight: bold;
-}
 
-
-.alinharGeral{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-
-
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: @font;
+    font-family: Roboto, sans-serif;
 }
 
-body{
-    background-color: #colors[backgroundColor];
-    color: @textColor;
+body {
+    background-color: @background;
 }
 
-.interface{
-    max-width: 960px;
+li {
+    list-style: none;
+}
+
+.container {
+    max-width: 1024px;
     width: 100%;
     margin: 0 auto;
 
     @media @breakpointTablet{
         max-width: 80%;
     }
-    
-    @media @breakpointMobille{
-        max-width: 70%;
-    }
+
 }
 
-
-.navegation{
-    background-color: @textColor;
-    display: flex;
-    justify-content: center;
-    border-bottom: solid 3px rgb(255, 255, 255);
-
-
-    ul{
-    display: flex;
-    gap: 4rem;
-    padding: 30px;
-    margin: 0 auto;
-
-    li{
-        list-style: none;
-        // usando o mixing
-        .fontMyText()
-    }
-    }
+header {
+    background-color: @background2;
+    position: sticky;
+    top: 0;
+    left: 0;
 }
 
-
-
-
-
-header{
-
+header .container {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    height: 80vh;
+    padding: 16px 0;
 
-    @media @breakpointTablet{
+    .menu {
         display: flex;
-        flex-direction: column;
-        height: max-content;
-       }
-   
-       @media @breakpointMobille{
-           display: flex;
-           flex-direction: column;
-           height: max-content;
-          }
+    
+        li {
+            font-weight: bold;
+            margin-left: 24px;
+        
+            a {
+                color: @textColor;
+                text-decoration: none;
+            }
+        } 
+    }
+}
+
+
+
+
+section {
+    padding: 56px 0;
 
     
-.container-sobre{
-    margin-top: 4rem;
-    display: flex;
+.products {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(3, 32.66%);
+    column-gap: 1%;
+    row-gap: 4%;
+    width: 100%;
 
     @media @breakpointTablet{
-     display: flex;
-     flex-direction: column;
+        grid-template-columns: repeat(2, 48.5%);
+        column-gap: 3%;
     }
 
     @media @breakpointMobille{
-        display: flex;
-        flex-direction: column;
-       }
-
-    img{
-        height: 500px;
-        transition: all .4s ease;
-
-        &:hover{
-            border-radius: 30px;
-        }
-
+        display: block;
     }
 
-    .conteudo{
-        padding-left: 1rem;
-        padding-right: 1rem;
+    .product-item  {
 
-        h1{
-            font-size: 3rem;
-            font-weight: bold;
-            border-bottom: solid 3px @textColor;
+        @media @breakpointMobille{
+            margin-bottom: 32px;
         }
+        
+        
+    }
 
-        h2{
-            margin-top: 2rem;
-            font-size: 2rem;
-        }
+}
 
-        p{
-            margin-top: 1rem;
-            font-size: 1.1rem;
-        }
+}
+
+.product-item img {
+    width: 100%;
+    border-radius: 16px;
+}
+
+.product-button {
+    display: block;
+    background-color: @colorButton;
+    color: #fff;
+    text-align: center;
+    padding: 8px 0;
+    border-radius: 8px;
+    margin-top: 8px;
+    text-decoration: none;
+
+    &:hover {
+        background-color: @colorButton;
     }
 }
-}
 
-nav{
-    background-color: @textColor;
-    border-radius: 30px;
-    .alinharGeral();
 
-    ul{
-        padding: 20px;
-        display: flex;
-        flex-direction: column;
-        height: max-content;
-        gap: 4rem;
 
-        li{
-            list-style: none;
 
-            a{
-                display: flex;
-                flex-direction: column;
-                text-decoration: none;
-                align-items: center;
-                transition: all .4s ease;
-
-                &:hover{
-                    transform: translateY(-5px);
-                }
-            }
-        }
-    }
-}
