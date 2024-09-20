@@ -1,1 +1,0 @@
-let saludarBtn=document.getElementById("saludarBtn"),mensaje=document.getElementById("mensaje"),nombreInput=document.getElementById("nombre");function saludar(){var e=nombreInput.value;mensaje.textContent=e?`¡Hola, ${e}!`:"Por favor, escribe tu nombre."}saludarBtn.addEventListener("click",saludar);
