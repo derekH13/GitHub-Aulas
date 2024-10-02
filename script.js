@@ -1,18 +1,11 @@
-const alunos = [
-    {nome: 'derek', nota: 10},
-    {nome: 'julia', nota: 3},
-    {nome: 'tadeu', nota: 8},
-    {nome: 'amanda', nota: 6},
-    {nome: 'amanda', nota: 5}
-]
-
-
-const retornaMaiorSeis = (alunos) => {
-
-    const result =  alunos.filter(item => item.nota >= 6)
-
-    return result
+"use strict";
+function multiplicar(numero1, numero2) {
+    return numero1 * numero2;
 }
-
-
-console.log(retornaMaiorSeis(alunos));
+function saudacao(nome) {
+    return `Olá, ${nome}`;
+}
+multiplicar(2, 4);
+saudacao('derek');
+console.log(multiplicar(2, 4));
+console.log(saudacao('derek'));
